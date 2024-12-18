@@ -1,0 +1,735 @@
+/* From Uiverse.io by StealthWorm */ 
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  overflow: hidden;
+  height: 3rem;
+  background-size: 300% 300%;
+  cursor: pointer;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),
+    linear-gradient(
+      137.48deg,
+      #ffdb3b 10%,
+      #fe53bb 45%,
+      #8f51ea 67%,
+      #0044ff 87%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+strong{
+  size: 20px;
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  border: double 4px #fe53bb;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn:active .circle {
+  background: #fe53bb;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter',sans-serif;
+    }
+
+body {
+    background-color: #CFD5E4;
+    padding-bottom: 100px;
+}
+
+img {
+        max-width: 100%;
+        height: auto;
+      }
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+#logo {
+    width: 17px;
+    height: 20px;
+    background: #5D5FEF;
+    border-radius: 5px 0px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 7px;
+}
+
+
+#logo_text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 18px;
+    margin-left: 60px;
+}
+
+#time {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #252525;
+    margin-top: 15px;
+    margin-right: 20px;
+
+}
+
+
+
+
+
+.main_box {
+    width: 95%;
+    height: 750px;
+    margin: auto;
+    margin-top: 70px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+
+.heading_links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.notify_side {
+    display: flex;
+    margin-right: 15px;
+    
+}
+
+#notify {
+    position: relative;
+    top: 12px;
+    width: 24px;
+    height: 24px;
+}
+
+#theme {
+    position: relative;
+    top: 13px;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+.headimage {
+    margin: 0px 20px 0px 20px;
+}
+
+/* this is for the 2nd main box */
+
+.main_box2 {
+    display: grid;
+    height: 600px;
+    grid-template-columns: 147px 750px 300px;
+}
+
+.tabs {
+    display: block;
+    height: 35px;   
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #919191;
+}
+
+.tabs:hover {
+    border-right: 4px solid #5D5FEF;
+    color: #5D5FEF;
+}
+
+.tabs:active {
+    border-right: 4px solid #5D5FEF;
+    color: #5D5FEF;
+}
+
+
+
+
+.tab_images {
+    position: relative;
+    top: 5px;
+    margin-right: 7px;
+}
+
+#logout  {
+    position: relative;
+    top: 330px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FF414D;
+}
+
+
+#logout_image  {
+    position: relative;
+    top: 6px;
+}
+
+
+ /* this is for the middle box  */
+
+#details_box {
+    border-right: 1px solid #D9D9D9;
+    border-left: 1px solid #D9D9D9;
+}
+
+ .detailsbox_head {
+    display: flex;
+    justify-content: space-between;
+    width: 673px;
+    height: 141px;
+    margin: auto;
+    background: #262F59;
+    color: #FFFFFF;
+    padding: 27px;
+    
+ }
+
+
+ #wallet_bal {
+    position: relative;
+    bottom: 6px;
+    margin-left: 12px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+ }
+
+ #amount {
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 40px;
+    line-height: 47px;
+    margin-top: 10px;
+ }
+
+.acct_nav {
+    position: relative;
+    left: 20px;
+    display: flex;
+    margin-top: 7px;
+}
+
+.acct_checkp {
+    position: relative;
+    top: 56px;
+    right: 33px;
+    width: 28px;
+    font-weight: 500;
+    font-size: 7px;
+    line-height: 8px;
+}
+
+#addmoney {
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 10px;
+}
+
+
+ .acct_check {
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    padding: 8px;
+ }
+
+#plus {
+    border: 2px dotted white;
+    padding: 16px  11px;
+}
+
+.payment_box {
+    width: 673px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    border-bottom: 1px solid #D9D9D9;
+    
+}
+
+.payments {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #4B4B4B;
+    margin-left: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.payments:hover {
+    color: #5D5FEF;
+    border-bottom: 3px solid #5D5FEF;
+}
+
+
+
+
+#pay  {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #071124;
+}
+
+.payment_type {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #4B4B4B;
+}
+
+.companylogo_div  {
+    display: flex;
+    width: 673px; 
+    margin: auto; 
+    margin-top: 25px;
+    height: 85px;
+}
+
+
+
+.company_logo  {
+    width: 80px;
+    height: 80px;
+    padding: 16px;
+    margin-right: 17px;
+    background: #F8FAFB;
+    box-shadow: 0px 0px 4px #D9D9D9;
+    
+}
+
+.company_logo:hover  {
+    border: 2px solid #5D5FEF;
+}
+
+#next {
+    position: absolute;
+    top: 63%;
+    left: 67%;
+    padding: 3px;
+}
+
+#next:hover {
+    border: 2px solid #5D5FEF;
+}
+
+#payment_box1 {
+    margin-top: 65px;
+}
+
+.transaction_header {
+    position: relative;
+    top: 12px;
+    display: flex;
+    justify-content: space-around;
+    width: 673px; 
+    margin: auto;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #919191;
+}
+
+
+
+
+
+
+.transaction_infobox {
+    width: 673px; 
+    margin: auto;
+    height: 80px; 
+    display: flex;
+    background: #F8FAFB;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.transaction_infobox:hover {
+    border: 1px solid #5D5FEF; 
+}
+
+
+.transfer_icon {
+    display: flex;
+    position: relative;
+    right: 25px;
+    padding-top: 24px;
+}
+
+.recent_transp {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #252525;
+    margin-left: 10px;
+}
+
+.recenttrans_time {
+    display: block;
+    font-weight: 300;
+    font-size: 6px;
+    line-height: 7px;
+    color: #252525;
+}
+
+
+#secondtranslogo {
+    width: 13px;
+    height: 13px;
+    margin-top: 4px;
+}
+
+.profile {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+    color: #252525;
+}
+
+.money {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF414D;
+    padding-top: 26px;
+    padding-left: 50px;
+}
+
+.status {
+    position: relative;
+    left: 28px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    padding-top: 26px;
+
+}
+
+.name_and_bank  {
+    position: relative;
+    left: 30px;
+    padding-top: 17px;
+}
+
+button {
+    color: white;
+    background: #5D5FEF;
+    border: 0.5px solid #D9D9D9;
+    border-radius: 2.5px;
+    padding: 6px 20px;
+}
+
+#transicon2  {
+    position: relative;
+    left: -20px;
+}
+
+
+
+
+/* this is for the third box */
+
+input  {
+    width: 261px;
+    height: 32px;
+    margin: auto;
+    background: #F8FAFB;
+    border: 1px solid #D9D9D9;
+}
+
+input:focus{
+    border: 1px solid #5D5FEF; 
+}
+
+
+input::placeholder {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #D9D9D9;
+}
+
+.account_createdbox {
+    width: 259px;
+    height: 145px;
+    background: #F8FAFB;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 33px;
+    padding: 15px 18px;
+}
+
+.accountcreatedp  {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #071124;
+    margin-bottom: 16px;
+
+}
+
+
+
+
+.innerimage  {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.manimage {
+    margin: 0px 4px;
+    border-radius: 50%;
+}
+
+
+.more_picscount  {
+    width: 45px;
+    height: 45px;
+    background-color: #5D5FEF;
+    border-radius: 50%;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.see_alllink {
+    position: relative;
+    bottom: 11px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: underline;
+    color: #5D5FEF;
+}
+
+
+.this_week  {
+    position: relative;
+    left: 65%;
+    width: 94px;
+    height: 18px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    padding: 2px;
+    color: #252525;
+    border: 0.5px solid #D8D8D8;
+    text-align: center;
+}
+
+.this_week:hover {
+    border: 1px solid #5D5FEF; 
+}
+
+
+#calender  {
+    position: relative;
+    top: 1px;
+    margin-right: 8px;
+}
+
+#downward_arrow  {
+    margin-left: 4px;
+}
+
+#total_revenuebox {
+    display: flex;
+    width: 259px;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#totalrevenue  {
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #071124;
+}
+
+
+#two_hundred  {
+    
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #45B649;
+}
+
+
+#graph  {
+    width: 120%;
+    height: 61.48px;
+    margin-top: 40px;
+}

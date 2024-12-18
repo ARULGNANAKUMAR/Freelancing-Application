@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARKERS AI</title>
+    <link rel="stylesheet" href="feriworks.css" />
+  </head>
+  <body>
+    <button type="button" class="btn" onclick="location.href='index.html'">
+    <strong>HOME</strong>
+    <div id="container-stars">
+      <div id="stars"></div>
+    </div>
+
+    <div id="glow">
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </button>
+
+    <div class="chat-container">
+      <div class="chat-header">
+       <div> <h2>SPARKERS AI</h2> </div>
+      </div>
+      <div class="chat-window" id="chat-window">
+        <!-- Chat messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Type your message here..."
+        />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <script>
+      function sendMessage() {
+        const userInput = document.getElementById("user-input").value;
+        if (userInput.trim() === "") return;
+
+        const chatWindow = document.getElementById("chat-window");
+
+        const userMessage = document.createElement("div");
+        userMessage.className = "message user-message";
+        userMessage.innerText = userInput;
+        chatWindow.appendChild(userMessage);
+
+        document.getElementById("user-input").value = "";
+
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+
+        if (userInput.toLowerCase() === "hi") {
+          showOptions();
+        } else {
+          setTimeout(() => {
+            const botMessage = document.createElement("div");
+            botMessage.className = "message bot-message";
+            botMessage.innerText = "Type hi to response.";
+            chatWindow.appendChild(botMessage);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+          }, 1000);
+        }
+      }
+
+      function showOptions() {
+        const chatWindow = document.getElementById("chat-window");
+
+        const optionsContainer = document.createElement("div");
+        optionsContainer.className = "message bot-message";
+
+        const resumeButton = document.createElement("button");
+        resumeButton.className = "option-button";
+        resumeButton.innerText = "Give me resume tips";
+        resumeButton.onclick = function () {
+          displayUserMessage("Give me resume tips");
+          showResponse("Here are some Resume tips:")
+          showResponse(getResumeTips());
+        };
+
+        const interviewButton = document.createElement("button");
+        interviewButton.className = "option-button";
+        interviewButton.innerText = "Give me interview tips";
+        interviewButton.onclick = function () {
+          displayUserMessage("Give me interview tips");
+          showResponse("Here are some interview tips:")
+          showResponse(getInterviewTips());
+        };
+
+        const freelancerButton = document.createElement("button");
+        freelancerButton.className = "option-button";
+        freelancerButton.innerText = "Roadmap for Freelancer";
+        freelancerButton.onclick = function () {
+          displayUserMessage("Roadmap for Freelancer");
+          showResponse("Here is the roadmap for a freelancer:")
+          showResponse(getFreelancerRoadmap());
+        };
+
+        const incomeButton = document.createElement("button");
+        incomeButton.className = "option-button";
+        incomeButton.innerText = "Companies with Good Income Opportunities";
+        incomeButton.onclick = function () {
+          displayUserMessage("Companies with Good Income Opportunities");
+          showResponse("Here are some companies with good income opportunities:")
+          showResponse(getGoodIncomeCompanies());
+        };
+
+        optionsContainer.appendChild(resumeButton);
+        optionsContainer.appendChild(interviewButton);
+        optionsContainer.appendChild(freelancerButton);
+        optionsContainer.appendChild(incomeButton);
+
+        chatWindow.appendChild(optionsContainer);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }
+
+      function displayUserMessage(message) {
+        const chatWindow = document.getElementById("chat-window");
+
+        const userMessage = document.createElement("div");
+        userMessage.className = "message user-message";
+        userMessage.innerText = message;
+
+        chatWindow.appendChild(userMessage);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }
+
+      function showResponse(responseText) {
+        const chatWindow = document.getElementById("chat-window");
+
+        const botMessage = document.createElement("div");
+        botMessage.className = "message bot-message";
+        botMessage.innerHTML = responseText;
+
+        chatWindow.appendChild(botMessage);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }
+
+      function getResumeTips() {
+        return `
+          <strong>Resume tips</strong><br>
+          <ul>
+            <li><strong>Keep it concise:</strong> Keep your resume to one or two pages. Only include information that is relevant to the job you’re applying for. Use a clear and professional format for your resume, with consistent font sizes and spacing.</li>
+            <li><strong>Use keywords:</strong> Use keywords from the job description in your resume, so that your resume will be more likely to show up in automated applicant tracking systems.</li>
+            <li><strong>Highlight technical skills:</strong> Highlight your technical skills and experience in a separate section at the top of your resume, so that potential employers can quickly see your expertise.</li>
+            <li><strong>Use bullet points:</strong> Use bullet points to break up your experience and make it easier to read.</li>
+            <li><strong>Quantify your achievements:</strong> Use numbers and data to quantify your accomplishments, such as the number of projects you worked on, the amount of code you wrote, or the impact you made on a project.</li>
+            <li><strong>Use action verbs:</strong> Use action verbs to describe your experience, such as “developed,” “created,” and “implemented.”</li>
+            <li><strong>Customize your resume:</strong> Tailor your resume to the specific job you’re applying for, highlighting the skills and experience that are most relevant to the position.</li>
+            <li><strong>Proofread:</strong> Finally, make sure you proofread your resume carefully for spelling and grammar errors, and ask a friend or colleague to review it as well.</li>
+            <li><strong>Use the X by Y by Z formula:</strong> Google describes this as: “Accomplished [X] as measured by [Y], by doing [Z].” But just to make it easier to remember, let’s shorten it to X-Y-Z.</li>
+          </ul>
+       ` ;
+      }
+
+      function getInterviewTips() {
+        return `
+          <strong>Interview Tips</strong><br>
+          <ul>
+            <li><strong>Technical Interview tips</strong></li>
+            <li><strong>English:</strong> If you want to work internationally you really need to speak good enough English.</li>
+            <li><strong>Be prepared:</strong> Make sure you know what the interview is for and what you need to know, do the research about the company and the role you are applying to.</li>
+            <li><strong>Be honest:</strong> Be honest about what you know and don’t know. It’s better to admit you don’t know something than to pretend you do. But if you still prefer to lie you better be good at it (Fake it till you make it 🤘).</li>
+            <li><strong>Be curious and ask questions:</strong> It’s okay to ask questions during the interview if you don’t understand something.</li>
+            <li><strong>Be friendly and polite:</strong> Smile and be friendly during the interview. This will make the interviewer feel comfortable and help you make a good impression.</li>
+            <li><strong>Practice:</strong> Practice your skills and knowledge so that you feel more comfortable during the interview.</li>
+            <li><strong>Pay attention:</strong> Listen carefully to the interviewer’s questions and make sure you understand them.</li>
+            <li><strong>Use examples:</strong> When answering a question, try to use real-life examples to help the interviewer understand your answer.</li>
+            <li><strong>Take your time:</strong> Don’t rush through the interview. Take your time and think carefully before answering.</li>
+            <li><strong>Have fun:</strong> Enjoy the interview and see it as an opportunity to learn and grow. Don’t stress yourself, imagine you are doing yet another mock interview.</li>
+          </ul>
+        `;
+      }
+
+      function getFreelancerRoadmap() {
+        return `
+          <strong>Roadmap for a Freelancer</strong><br>
+          <ul>
+            <li><strong>Identify Your Niche:</strong><br>
+              <ul>
+                <li>Determine your skills and interests (e.g., writing, graphic design, programming).</li>
+                <li>Research market demand to find a profitable niche.</li>
+              </ul>
+            </li>
+            <li><strong>Build a Strong Portfolio:</strong><br>
+              <ul>
+                <li>Create sample work or showcase past projects.</li>
+                <li>Develop a professional website or online portfolio to display your work.</li>
+              </ul>
+            </li>
+            <li><strong>Set Up Your Business:</strong><br>
+              <ul>
+                <li>Decide on your business structure (sole proprietorship, LLC, etc.).</li>
+                <li>Handle administrative tasks like registering your business and managing taxes.</li>
+              </ul>
+            </li>
+            <li><strong>Find Clients:</strong><br>
+              <ul>
+                <li>Join freelancing platforms like Upwork, Freelancer, or Fiverr.</li>
+                <li>Network through social media, industry events, and local meetups.</li>
+              </ul>
+            </li>
+            <li><strong>Market Yourself:</strong><br>
+              <ul>
+                <li>Create a personal brand and marketing materials (business cards, social media profiles).</li>
+                <li>Use content marketing, such as blogging or vlogging, to attract clients.</li>
+              </ul>
+            </li>
+            <li><strong>Set Your Rates:</strong><br>
+              <ul>
+                <li>Research industry standards and set competitive rates.</li>
+                <li>Consider offering tiered pricing or packages.</li>
+              </ul>
+            </li>
+            <li><strong>Manage Projects Efficiently:</strong><br>
+              <ul>
+                <li>Use project management tools (e.g., Trello, Asana) to keep track of tasks and deadlines.</li>
+                <li>Communicate effectively with clients and provide regular updates.</li>
+              </ul>
+            </li>
+            <li><strong>Expand Your Skills:</strong><br>
+              <ul>
+                <li>Stay updated with industry trends and continually improve your skills.</li>
+                <li>Take courses or certifications to offer more services.</li>
+              </ul>
+            </li>
+            <li><strong>Build Long-Term Relationships:</strong><br>
+              <ul>
+                <li>Focus on client satisfaction to encourage repeat business and referrals.</li>
+                <li>Ask for testimonials and reviews to build credibility.</li>
+              </ul>
+            </li>
+            <li><strong>Review and Adjust:</strong><br>
+              <ul>
+                <li>Regularly review your business performance and make adjustments as needed.</li>
+                <li>Set goals and track your progress to ensure continued growth.</li>
+              </ul>
+            </li>
+          </ul>
+        `;
+      }
+
+      function getGoodIncomeCompanies() {
+        return `
+          <strong>Companies with Good Income Opportunities</strong><br>
+          <strong>Tech and Software Companies</strong>
+          <ul>
+            <li><strong>Toptal:</strong> Specializes in connecting top freelancers with high-end clients in tech and finance.</li>
+            <li><strong>GitHub:</strong> Known for hiring freelance developers and open-source contributors for various projects.</li>
+            <li><strong>Automattic:</strong> The company behind WordPress.com often hires freelancers for development and design roles.</li>
+            <li><strong>TopCoder:</strong> Offers opportunities for freelancers in coding competitions and projects.</li>
+            <li><strong>Red Hat:</strong> Provides open-source solutions and hires freelancers for software development and consulting.</li>
+          </ul>
+          <strong>Design and Creative Agencies</strong>
+          <ul>
+            <li><strong>IDEO:</strong> A design and consulting firm that hires freelancers for innovation and design projects.</li>
+            <li><strong>Pentagram:</strong> A renowned design studio that often collaborates with freelance designers.</li>
+            <li><strong>Frog Design:</strong> Known for design and strategy projects, offering opportunities for freelance designers and consultants.</li>
+            <li><strong>Landor Associates:</strong> Specializes in branding and design, frequently working with freelance designers.</li>
+            <li><strong>MetaLab:</strong> A design agency that works with freelance designers on product and web design projects.</li>
+          </ul>
+          <strong>Writing and Content Creation</strong>
+          <ul>
+            <li><strong>Conde Nast:</strong> Offers opportunities for freelance writers and content creators in the publishing industry.</li>
+            <li><strong>The New York Times:</strong> Hires freelance journalists and writers for various sections and projects.</li>
+            <li><strong>Vox Media:</strong> Provides freelance opportunities for writers and content creators across its network of websites.</li>
+            <li><strong>BuzzFeed:</strong> Often hires freelance writers and content creators for their digital content.</li>
+            <li><strong>Wired:</strong> Known for technology and culture journalism, frequently hiring freelance writers and reporters.</li>
+          </ul>
+          <strong>Consulting and Professional Services</strong>
+          <ul>
+            <li><strong>McKinsey & Company:</strong> Offers consulting opportunities for freelance consultants and industry experts.</li>
+            <li><strong>Boston Consulting Group (BCG):</strong> Hires freelance consultants for strategic and management consulting projects.</li>
+            <li><strong>Deloitte:</strong> Provides freelance opportunities in consulting, technology, and financial advisory.</li>
+            <li><strong>Accenture:</strong> Offers consulting and technology project opportunities for freelancers.</li>
+            <li><strong>PwC (PricewaterhouseCoopers):</strong> Provides freelance roles in consulting, audit, and advisory services.</li>
+          </ul>
+        `;
+      }
+
+      document.getElementById("user-input").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault(); // Prevent default Enter key behavior
+          sendMessage();
+        }
+      });
+    </script>
+  </body>
+</html>
